@@ -1,0 +1,29 @@
+<section class="section">
+  <div>
+    <table class="table is-fullwidth">
+      <caption>Child Book</caption>
+      <thead>
+      <tr>
+        <th class="has-text-centered">Thumbnail</th>
+        <th class="has-text-centered">Name</th>
+        <th class="has-text-centered">Element</th>
+        <th class="has-text-centered">Role</th>
+        <th class="has-text-centered">Rank</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let child of list$ | async">
+          <td class="has-text-centered">
+            <figure class="image is-128x128">
+              <img [src]="child?.thumbnail? child.thumbnail : 'https://bulma.io/images/placeholders/128x128.png'" alt="">
+            </figure>
+          </td>
+          <td><p class="has-text-centered"><a [routerLink]="['/child', child.child_id]">{{child.name}}</a></p></td>
+          <td><p class="has-text-centered">{{child.element}}</p></td>
+          <td><p class="has-text-centered">{{child.role}}</p></td>
+          <td class="has-text-centered"><ng-container *ngFor="let i of [].constructor(1 * child.rank)"><i class="fas fa-star checked"></i></ng-container></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

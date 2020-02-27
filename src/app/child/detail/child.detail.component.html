@@ -1,0 +1,73 @@
+<section class="section">
+  <div class="columns">
+    <div *ngIf="unit?.image" class="column is-3">
+      <div class="box">
+        <figure class="image is-fullwidth">
+          <img [src]="unit?.image" alt="">
+        </figure>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <h1 class="title is-1 has-text-centered">{{unit.name}}</h1>
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Rank</p>
+              <p class="title is-4"><ng-container *ngFor="let i of [].constructor(unit.rank * 1)"><i class="fas fa-star"></i></ng-container></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Role</p>
+              <p class="title is-4">{{unit.role}}</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Element</p>
+              <p class="title is-4">{{unit.element}}</p>
+            </div>
+          </div>
+
+          <div class="level-item has-text-centered">
+            <div>
+              <figure class="image is-128x128">
+                <img *ngIf="unit.thumbnail" [src]="unit.thumbnail" [alt]="unit.name"  >
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="level">
+          <div>
+            <p class="title is-5">Leader Skill</p>
+            <p class="subtitle is-6">{{unit.leader_skill}}</p>
+          </div>
+        </div>
+
+        <div class="level">
+          <div>
+            <p class="title is-5">Tap Skill</p>
+            <p class="subtitle is-6">{{unit.tap_skill}}</p>
+          </div>
+        </div>
+
+        <div class="level">
+          <div>
+            <p class="title is-5">Slide Skill</p>
+            <p class="subtitle is-6">{{unit.slide_skill}}</p>
+          </div>
+        </div>
+
+        <div class="level">
+          <div>
+            <p class="title is-5">Drive Skill</p>
+            <p class="subtitle is-6">{{unit.drive_skill}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
