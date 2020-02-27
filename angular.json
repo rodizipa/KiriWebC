@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "kiriweb": {
@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bulma/bulma.sass",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kiriweb"
+    }
+  },
+  "defaultProject": "kiriweb",
+  "cli": {
+    "analytics": "6bae96a0-2ffa-4f76-9634-d73d8f93a4d8"
+  }
 }
