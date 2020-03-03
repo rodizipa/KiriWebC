@@ -15,7 +15,12 @@
         <tr *ngFor="let child of list$ | async">
           <td class="has-text-centered">
             <figure class="image is-128x128">
-              <img [src]="child?.thumbnail? child.thumbnail : 'https://bulma.io/images/placeholders/128x128.png'" alt="">
+              <div *ngIf="child?.thumbnail; else padraothumb">
+                <img [src]="child?.thumbnail" alt="">
+              </div>
+              <ng-template #padraothumb>>
+                <img src="https://bulma.io/images/placeholders/128x128.png" alt="">
+              </ng-template>
             </figure>
           </td>
           <td><p class="has-text-centered"><a [routerLink]="['/child', child.child_id]">{{child.name}}</a></p></td>

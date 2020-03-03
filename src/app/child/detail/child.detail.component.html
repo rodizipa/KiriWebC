@@ -32,9 +32,9 @@
           </div>
 
           <div class="level-item has-text-centered">
-            <div>
+            <div *ngIf="unit?.thumbnail">
               <figure class="image is-128x128">
-                <img *ngIf="unit.thumbnail" [src]="unit.thumbnail" [alt]="unit.name"  >
+                <img [src]="unit?.thumbnail" [alt]="unit.name"  >
               </figure>
             </div>
           </div>
